@@ -1,0 +1,79 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+
+@import "tailwindcss";
+
+/* Theme, content globs, and plugins are declared in tailwind.config.ts. */
+@config "../tailwind.config.ts";
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    --background: 36 40% 98%;
+    --foreground: 250 15% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 250 15% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 250 15% 12%;
+
+    --primary: 11 80% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 36 30% 94%;
+    --secondary-foreground: 250 15% 12%;
+
+    --muted: 36 22% 93%;
+    --muted-foreground: 250 8% 42%;
+
+    --accent: 36 40% 92%;
+    --accent-foreground: 250 15% 12%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 152 52% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 36 18% 88%;
+    --input: 36 18% 88%;
+    --ring: 11 80% 50%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 36 40% 98%;
+    --sidebar-foreground: 250 15% 12%;
+    --sidebar-primary: 11 80% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 36 30% 94%;
+    --sidebar-accent-foreground: 250 15% 12%;
+    --sidebar-border: 36 18% 88%;
+    --sidebar-ring: 11 80% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+}
